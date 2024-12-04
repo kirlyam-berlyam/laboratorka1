@@ -8,12 +8,12 @@ void readLinesFromFile(const std::string& filename, std::vector<std::string>& li
     std::string line;
 
     if (!inputFile) {
-        ///std::cerr << "Ошибка при открытии файла: " << filename << std::endl;
+        std::cerr << "Ошибка при открытии файла: " << filename << std::endl;
         return;
     }
 
     while (std::getline(inputFile, line)) {
-        lines.push_back(line); // Добавляем строку в вектор
+        lines.push_back(line);
     }
 
     inputFile.close();
