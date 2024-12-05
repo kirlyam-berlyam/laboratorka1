@@ -26,7 +26,18 @@ void printLines(const std::vector<std::string>& lines) {
 }
 
 void writeLinesToFile(const std::string& filename, const std::vector<std::string>& lines) {
+    std::ofstream outputFile(filename);
 
+    if (!outputFile) {
+        std::cerr << "Ошибка при открытии файла для записи: " << filename << std::endl;
+        return;
+    }
+
+    for (const auto& line : lines) {
+        outputFile << line << std::endl; // Запись каждой строки в файл
+    }
+
+    outputFile.close();
 }
 
 int main() {
