@@ -20,11 +20,24 @@ void readLinesFromFile(const std::string& filename, std::vector<std::string>& li
 }
 
 void printLines(const std::vector<std::string>& lines) {
-
+    for (const auto& line : lines) {
+        std::cout << line << std::endl;
+    }
 }
 
 void writeLinesToFile(const std::string& filename, const std::vector<std::string>& lines) {
+    std::ofstream outputFile(filename);
 
+    if (!outputFile) {
+        std::cerr << "Ошибка при открытии файла для записи: " << filename << std::endl;
+        return;
+    }
+
+    for (const auto& line : lines) {
+        outputFile << line << std::endl; 
+    }
+
+    outputFile.close();
 }
 
 int main() {
