@@ -34,7 +34,7 @@ void writeLinesToFile(const std::string& filename, const std::vector<std::string
     }
 
     for (const auto& line : lines) {
-        outputFile << line << std::endl; // Запись каждой строки в файл
+        outputFile << line << std::endl; 
     }
 
     outputFile.close();
