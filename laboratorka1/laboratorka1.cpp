@@ -3,6 +3,7 @@
 #include <vector>
 #include <string>
 
+
 void readLinesFromFile(const std::string& filename, std::vector<std::string>& lines) {
     std::ifstream inputFile(filename);
     std::string line;
@@ -19,11 +20,13 @@ void readLinesFromFile(const std::string& filename, std::vector<std::string>& li
     inputFile.close();
 }
 
+
 void printLines(const std::vector<std::string>& lines) {
     for (const auto& line : lines) {
         std::cout << line << std::endl;
     }
 }
+
 
 void writeLinesToFile(const std::string& filename, const std::vector<std::string>& lines) {
     std::ofstream outputFile(filename);
@@ -39,6 +42,7 @@ void writeLinesToFile(const std::string& filename, const std::vector<std::string
 
     outputFile.close();
 }
+
 
 int main() {
     std::string inputFilename = "input.txt";
